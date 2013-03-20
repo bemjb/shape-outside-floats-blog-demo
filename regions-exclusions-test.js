@@ -18,6 +18,7 @@ $(function () {
         get(elem, 'shape-outside') &&
         get(elem, 'flow-from');
     });
-    $('head').append("<style type='text/css'> .regions-excluions-support { display: none; background-color: #f2dede; padding: .5em; color: #b94a48; margin: 1em; border-radius: .5em; } .no-regions-shapes .support { display: block; }");
-    $('body').prepend("<div class='regions-exclusions-support'> <h4>Warning</h4> <p>It looks like CSS Regions and Exclusions are not currently enabled by your browser. Find out more about <a href='http://adobe.github.com/web-platform/samples/css-exclusions/index.html#browser-support'>browser support</a>.</p> </div>");
+    if ($('.no-regions-shapes').size()) {
+        $('body').prepend("<div style='background-color: #f2dede; padding: .5em; color: #b94a48; margin: 1em; border-radius: .5em;'> <h4>Warning</h4> <p>It looks like CSS Regions and Exclusions are not currently enabled by your browser. Find out more about <a href='http://adobe.github.com/web-platform/samples/css-exclusions/index.html#browser-support'>browser support</a>.</p> </div>");
+    }
 });
